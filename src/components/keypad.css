@@ -1,0 +1,72 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.audio-panel {
+    display: grid;
+    grid-template: repeat(5, 60px) / repeat(5, 60px);
+    grid-gap: 10px;
+}
+
+.key {
+    border: 1px solid #333;
+    background-color: #ccc;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 1.5em;
+    box-shadow: 3px 3px 3px rgba(100, 100, 100, 0.2);
+    text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.6);
+}
+
+.axis-x {
+    grid-column: 2 / span 4;
+    display: grid;
+    grid-template: 1fr / repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.axis-y {
+    grid-row: 2 / span 4;
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr;
+    grid-gap: 10px;
+}
+
+.axis-x .key {
+    background-color: #06c;
+    color: #fff;
+}
+
+.axis-y .key {
+    background-color: rgb(126, 0, 138);
+    color: #fff;
+}
+
+.axis-keys .key {
+    font-size: 1em;
+}
+
+.key.key-down {
+    background-color: #090;
+}
+
+.keypad {
+    grid-row: 2 / span 4;
+    grid-column: 2 / span 4;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    grid-gap: 10px;
+}
