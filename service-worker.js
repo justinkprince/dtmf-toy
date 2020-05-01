@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dtmf-toy/precache-manifest.b5d93548c9c4899d0af96939743b9066.js"
+  "/dtmf-toy/precache-manifest.9fcfcd92e3ce37e0c6ff4b9d159ba8f3.js"
 );
 
 self.addEventListener('message', (event) => {
