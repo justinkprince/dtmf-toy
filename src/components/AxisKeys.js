@@ -1,7 +1,7 @@
 import React from "react";
 import Key from "./Key";
 import frequencies from "../constants/frequencies";
-import { startTone, stopTone } from "../lib/DtmfTone";
+import { playTone } from "../lib/DtmfTone";
 
 export default props => {
   const isX = props.axis === "x";
@@ -13,8 +13,7 @@ export default props => {
         return (
           <Key
             key={`axisKey-${frequency}`}
-            onMouseDown={() => startTone([frequency])}
-            onMouseUp={() => stopTone()}
+            onClick={() => playTone([frequency])}
           >
             {frequency}Hz
           </Key>

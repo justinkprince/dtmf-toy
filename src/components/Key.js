@@ -2,24 +2,16 @@ import React, { useState } from "react";
 import classnames from "classnames";
 
 export default props => {
-  const [isKeyPressed, setIsKeyPressed] = useState(false);
-
-  const mouseEventHandler = e => {
-    const isMouseDownEvent = e.type === "mousedown";
-    setIsKeyPressed(isMouseDownEvent);
-    const eventType = isMouseDownEvent ? "onMouseDown" : "onMouseUp";
-    const eventHandler = props[eventType];
-    eventHandler();
+  const onClickHandler = e => {
+    props.onClick();
   };
 
-  const keyClass = classnames("key", { "key-down": isKeyPressed });
+  const keyClass = classnames("key");
 
   return (
     <button
       className={keyClass}
-      onMouseDown={mouseEventHandler}
-      onMouseUp={mouseEventHandler}
-      onMouseOut={mouseEventHandler}
+      onClick={onClickHandler}
     >
       {props.children}
     </button>

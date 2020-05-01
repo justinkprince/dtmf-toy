@@ -12,14 +12,23 @@ const startTone = frequencies => {
   });
 };
 
+const playTone = frequencies => {
+  frequencies.forEach(frequency => {
+    const tone = new Tone.Oscillator(frequency, "sine").toMaster();
+    tone.start();
+    tone.stop('+0.5');
+  });
+};
+
 const stopTone = () => {
   tones.forEach(tone => tone.stop());
   tones.length = 0;
 };
 
-export { startTone, stopTone };
+export { startTone, stopTone, playTone };
 
 export default {
   startTone,
-  stopTone
+  stopTone,
+  playTone
 };

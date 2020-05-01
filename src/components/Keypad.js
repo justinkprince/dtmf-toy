@@ -1,6 +1,6 @@
 import React from "react";
 import Key from "./Key";
-import { startTone, stopTone } from "../lib/DtmfTone";
+import { playTone } from "../lib/DtmfTone";
 import keys from "../constants/keys";
 import "./keypad.css";
 
@@ -13,8 +13,7 @@ export default () => {
         return (
           <Key
             key={key.id}
-            onMouseDown={() => startTone(frequencies)}
-            onMouseUp={() => stopTone()}
+            onClick={() => playTone(frequencies)}
           >
             {key.label}
           </Key>
