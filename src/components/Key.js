@@ -19,6 +19,7 @@ export default props => {
       className={keyClass}
       onMouseDown={mouseEventHandler}
       onMouseUp={mouseEventHandler}
+      onMouseOut={mouseEventHandler}
     >
       {props.children}
     </button>

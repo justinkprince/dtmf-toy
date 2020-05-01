@@ -1,6 +1,8 @@
 import Tone from "tone";
 
-let tones = [];
+Tone.global.TONE_SILENCE_LOGGING = true;
+
+const tones = [];
 
 const startTone = frequencies => {
   frequencies.forEach(frequency => {
